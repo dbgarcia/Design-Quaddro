@@ -37,7 +37,7 @@ function splash(_ref) {
   return div;
 }
 
-var pink = '#E01563';
+var pink = '#EB7847';
 
 function style() {
   var _ref2 = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
