@@ -291,7 +291,7 @@ function style() {
   });
 
   css.add('p.signin a:hover', {
-    'background-color': '#E01563',
+    'background-color': '#EB7847',
     color: '#fff'
   });
 
