@@ -123,7 +123,7 @@ function slackin(_ref) {
     var total = _slack$users.total;
 
     if (!name) return res.send(404);
-    var page = (0, _vd2.default)('html', (0, _vd2.default)('head', (0, _vd2.default)('title', 'Join ', name, ' on Slack!'), (0, _vd2.default)('meta name=viewport content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=no"'), (0, _vd2.default)('link rel="shortcut icon" href=https://slack.global.ssl.fastly.net/272a/img/icons/favicon-32.png'), css && (0, _vd2.default)('link rel=stylesheet', { href: css })), (0, _splash2.default)({ coc: coc, path: path, css: css, name: name, org: org, logo: logo, channels: channels, active: active, total: total }));
+    var page = (0, _vd2.default)('html', (0, _vd2.default)('head', (0, _vd2.default)('title', 'Participe do ', name, ' no Slack!'), (0, _vd2.default)('meta name=viewport content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=no"'), (0, _vd2.default)('link rel="shortcut icon" href=https://slack.global.ssl.fastly.net/272a/img/icons/favicon-32.png'), css && (0, _vd2.default)('link rel=stylesheet', { href: css })), (0, _splash2.default)({ coc: coc, path: path, css: css, name: name, org: org, logo: logo, channels: channels, active: active, total: total }));
     res.type('html');
     res.send(page.toHTML());
   });
@@ -175,7 +175,7 @@ function slackin(_ref) {
     }
 
     if (coc && '1' != req.body.coc) {
-      return res.status(400).json({ msg: 'É obrigatório concordar com o Cód/de/Conduta' });
+      return res.status(400).json({ msg: 'É obrigatório concordar com o Código de Conduta' });
     }
 
     (0, _slackInvite2.default)({ token: token, org: org, email: email, channel: chanId }, function (err) {
