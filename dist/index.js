@@ -180,7 +180,7 @@ function slackin(_ref) {
 
     (0, _slackInvite2.default)({ token: token, org: org, email: email, channel: chanId }, function (err) {
       if (err) {
-        if (err.message === 'Sending you to Slack...') {
+        if (err.message === 'ENVIANDO VOCÊ PARA Slack...') {
           return res.status(303).json({ msg: err.message, redirectUrl: 'https://' + org + '.slack.com' });
         }
 
