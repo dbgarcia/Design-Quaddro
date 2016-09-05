@@ -156,26 +156,26 @@ function slackin(_ref) {
     if (channels) {
       var channel = req.body.channel;
       if (!channels.includes(channel)) {
-        return res.status(400).json({ msg: 'Not a permitted channel' });
+        return res.status(400).json({ msg: 'Não é permitido neste canal' });
       }
       chanId = slack.getChannelId(channel);
       if (!chanId) {
-        return res.status(400).json({ msg: 'Channel not found "' + channel + '"' });
+        return res.status(400).json({ msg: 'Canal não encontrado "' + channel + '"' });
       }
     }
 
     var email = req.body.email;
 
     if (!email) {
-      return res.status(400).json({ msg: 'No email provided' });
+      return res.status(400).json({ msg: 'Informe um e-mail' });
     }
 
     if (!(0, _emailRegex2.default)().test(email)) {
-      return res.status(400).json({ msg: 'Invalid email' });
+      return res.status(400).json({ msg: 'E-mail invalido' });
     }
 
     if (coc && '1' != req.body.coc) {
-      return res.status(400).json({ msg: 'Agreement to CoC is mandatory' });
+      return res.status(400).json({ msg: 'É obrigatório concordar com o Cód/de/Conduta' });
     }
 
     (0, _slackInvite2.default)({ token: token, org: org, email: email, channel: chanId }, function (err) {
@@ -187,7 +187,7 @@ function slackin(_ref) {
         return res.status(400).json({ msg: err.message });
       }
 
-      res.status(200).json({ msg: 'WOOT. Check your email!' });
+      res.status(200).json({ msg: 'PRONTO!. Check seu e-mail!' });
     });
   });
 
